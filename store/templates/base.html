@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>MyShop</title>
+  <style>
+    nav{
+      background-color: orange;
+    }
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+  font-colour: $teal-200;
+}
+  </style>
+</head>
+
+<body>
+
+<nav class="one-edge-shadow
+  navbar navbar-light
+  sticky-top navbar 
+  navbar-expand-lg
+  text-white">
+    <a class="navbar-brand ms-3 text-dark " href="/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+    <img src="https://www.freepnglogos.com/uploads/mobile-circle-logo-png-30.png" style="width:60px;height:60px,color:text-light;">MyShop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/store">Каталог<span class="sr-only">(current)</span></a>
+        </li>
+
+          </ul>
+
+
+
+
+      <ul class=" navbar-nav my-2 my-lg-0">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/cart">Корзина
+            <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+
+        {% if request.session.customer %}
+        
+        <li class="nav-item active ">
+          <a class="nav-link" href="/orders">Заказы<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="/logout">Выйти<span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+       
+        <li class="nav-item active">
+          <a class="nav-link" href="/signup">Регистрация<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Войти<span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+
+
+      </ul>
+
+
+    </div>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+
+</html>
